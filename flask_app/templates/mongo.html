@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        {% block title %} Heezzing's {% endblock %}
+    </title>
+    <style>
+        #a1 {
+            border: 8px outset rgb(106, 110, 110);
+            width:100%;
+            text-align: center;
+        }
+        #a2 {
+            background-color: rgb(106, 110, 110);
+            width:100%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+        <div id="a1">
+            <p><h1>광명시 아파트 매매 리스트</h1></p>
+        </div>
+        <div id="a2">
+            <hr style="border: dashed 3px rgb(255, 255, 255);">
+            {%for i in data[1:20]%}
+            <p>매매연도 : {{i.YY}}</p>
+            <p>법정동명 : {{i.LEGALDONG_NM}}</p>
+            <p>아파트명 : {{i.APT_NM}}</p>
+            <p>거래금액(만원) : {{i.DELNG_AMT}}</p>
+            <hr style="border: dashed 3px rgb(255, 255, 255);">
+            {% endfor %}
+        </div>
+
+</body>
+
+</html>
